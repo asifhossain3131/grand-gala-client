@@ -1,0 +1,4 @@
+.header-bg {
+    clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%);
+    background: linear-gradient(180deg, rgba(6, 28, 61, 0.70) 0%, #061C3D 100%), url(<correct-path-to-image>), lightgray 0px -134.308px / 100% 118.547% no-repeat;
+}
