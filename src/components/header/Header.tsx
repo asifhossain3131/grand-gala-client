@@ -1,4 +1,3 @@
-import React from 'react';
 import './Header.css'
 import { Link } from 'react-router-dom';
 
@@ -11,8 +10,8 @@ const Header = () => {
     return (
         <header >
             <nav className='fixed z-20 w-full p-4 flex items-center justify-between'>
-                  <h2 className='font-semibold text-2xl text-white'>Grand<span className='text-yellow-900 font-bold text-4xl'>Gala</span></h2>
-                  <ul className='flex items-center justify-around space-x-4 text-white'>
+                  <h2 className='font-semibold text-2xl text-blue-800'>Grand<span className='text-yellow-900 font-bold text-4xl'>Gala</span></h2>
+                  <ul className='flex items-center justify-around space-x-4 text-yellow-600 font-bold'>
                     {
                         routes.map(({pathName,path},i)=>
                         <Link key={i} to={path}><li>{pathName}</li></Link>    

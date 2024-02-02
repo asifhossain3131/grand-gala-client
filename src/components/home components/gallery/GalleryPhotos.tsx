@@ -20,51 +20,51 @@ export default function GalleryPhotos() {
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
+    img: 'https://img.freepik.com/free-photo/female-wedding-planner-working-ceremony_23-2150167261.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=ais',
     title: 'Bed',
   },
   {
-    img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
+    img: 'https://img.freepik.com/free-photo/decorated-wedding-hall-with-candles-round-tables-centerpieces_8353-10057.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=ais',
     title: 'Kitchen',
   },
   {
-    img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
+    img: 'https://img.freepik.com/free-photo/tall-centrepiece-made-pink-flowers-crystal-chains-stands-dinner-table_1304-3336.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=ais',
     title: 'Sink',
   },
   {
-    img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
+    img: 'https://img.freepik.com/free-photo/female-wedding-planner-working-ceremony_23-2150167256.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=ais',
     title: 'Books',
   },
   {
-    img: 'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
+    img: 'https://img.freepik.com/free-photo/magic-view-prepared-evening-restaurant_8353-9910.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=ais',
     title: 'Chairs',
   },
   {
-    img: 'https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62',
+    img: 'https://img.freepik.com/free-photo/front-view-friends-having-lunch_23-2150598427.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=ais',
     title: 'Candle',
   },
   {
-    img: 'https://images.unsplash.com/photo-1530731141654-5993c3016c77',
+    img: 'https://img.freepik.com/free-photo/female-wedding-planner-working-ceremony_23-2150167222.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=ais',
     title: 'Laptop',
   },
   {
-    img: 'https://images.unsplash.com/photo-1481277542470-605612bd2d61',
+    img: 'https://img.freepik.com/free-photo/excited-audience-watching-confetti-fireworks-having-fun-music-festival-night-copy-space_637285-559.jpg?size=626&ext=jpg&ga=GA1.1.663062170.1681230249&semt=sph',
     title: 'Doors',
   },
   {
-    img: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7',
+    img: 'https://img.freepik.com/free-photo/waiting-room-with-monitors_1232-1390.jpg?size=626&ext=jpg&ga=GA1.1.663062170.1681230249&semt=sph',
     title: 'Coffee',
   },
   {
-    img: 'https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee',
+    img: 'https://img.freepik.com/free-photo/crowd-people-are-standing-club-with-pink-purple-lights_1340-32809.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=sph',
     title: 'Storage',
   },
   {
-    img: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4',
+    img: 'https://img.freepik.com/free-photo/corporate-businessman-giving-presentation-large-audience_53876-101865.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=sph',
     title: 'Coffee table',
   },
   {
-    img: 'https://images.unsplash.com/photo-1588436706487-9d55d73a39e3',
+    img: 'https://img.freepik.com/free-photo/rear-view-excited-fans-having-fun-music-festival-taking-pictures-stage-with-their-smart-phones-copy-space_637285-607.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=sph',
     title: 'Blinds',
   },
 ];
