@@ -1,30 +1,51 @@
-# React + TypeScript + Vite
+# GrandGala
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Event management webstie which simplifies the system and creates a user friendly environment. Super fast, user friendly, well error handling, unique design are the main features of this webapp. 
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Used technologies](#used-technologies)
 
-## Expanding the ESLint configuration
+## Installation
+To use the project on the local environment, you will need to follow the below simple steps. 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository:
 
-- Configure the top-level `parserOptions` property like this:
+    ```bash
+    git clone https://github.com/your-username/your-project.git
+    ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2. Navigate to the project directory:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+    ```bash
+    cd your-project
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+## Usage
+
+In this website, an user can book an event and pays advance fees for the event management as well as user can have a look at the previous and upcoming events before making a book. The website handles a strong authentication and authorization system which protect user data. On the other hand, with admin login, admin can handles all events and books as well as adding, deleting or updating an event. 
+
+## Used technologies
+* Typescript
+ * React 
+ * Tanstack query (For data caching and handling)
+ * Framer motion (For animation)
+ * Material ui (For components)
+ * Axios (For data fetching)
+
+#### Live Demo
+
+ live demo [GrandGala](https://your-live-demo-link.com).
+
+#### Server Code
+
+The server-side code is available [here](https://github.com/your-username/your-project-server).
+
