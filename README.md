@@ -6,7 +6,7 @@ Event management webstie which simplifies the system and creates a user friendly
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Used technologies](#used-technologies)
+- [Used technologies](#used-technologies)
 
 ## Installation
 To use the project on the local environment, you will need to follow the below simple steps. 

@@ -16,7 +16,7 @@ const DashboardSideboard = () => {
 
     const adminInfo=[
         {infoName:'Event management', image:'https://cdn-icons-png.flaticon.com/128/11287/11287355.png'},
-        {infoName:'Add food', route:'/dashboard/additem', image:'https://img.freepik.com/free-vector/cartoon-spoon-fork-knife-kitchen-design_24877-57345.jpg?size=626&ext=jpg&ga=GA1.1.663062170.1681230249&semt=robertav1_2_sidr'},
+        {infoName:'Services', route:'/dashboard/services', image:'https://cdn-icons-png.flaticon.com/128/11515/11515286.png'},
         {infoName:'Manage food', route:'/dashboard/managefood', image:'https://img.freepik.com/free-vector/burger-cheese-with-fire-cartoon-vector-icon-illustration-food-object-icon-concept-isolated-premium_138676-5539.jpg?size=626&ext=jpg&ga=GA1.1.663062170.1681230249&semt=robertav1_2_sidr'},
         {infoName:'Manage bookings',  image:'https://img.freepik.com/premium-vector/calendar-date-schedule-flat-concept-design_229280-168.jpg?size=626&ext=jpg&ga=GA1.2.663062170.1681230249&semt=robertav1_2_sidr'},
         {infoName:'All users', route:'/dashboard/allusers', image:'https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.663062170.1681230249&semt=robertav1_2_sidr'},
@@ -37,7 +37,7 @@ const DashboardSideboard = () => {
              <img src={admin.image} alt="" className='w-10 lg:w-6' />
             <div className='flex items-center justify-between flex-grow'>
             <span className={` text-sm text-white  hidden lg:inline-block origin-left duration-200`}>{admin.infoName}</span>
-             <KeyboardArrowDownIcon className='text-white'></KeyboardArrowDownIcon>
+             <KeyboardArrowDownIcon className='text-white hidden lg:inline-block'></KeyboardArrowDownIcon>
             </div>
              </li>
             )}

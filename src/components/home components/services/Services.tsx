@@ -13,7 +13,7 @@ const Services = () => {
     return (
         <div>
         <SectionTitle mainTitle={'Our Services'} subTitle={'Our services that present the best of us we give to our customers. Have a look to the detailed documentation'}></SectionTitle>
-            <div className="grid grid-cols-3 gap-4 mx-auto w-10/12">
+            <div className="grid grid-cols-1  lg:grid-cols-3 gap-4 mx-auto w-10/12">
                 {
 services?.map((service:ServiceData,i:number)=>
 <ServiceCard key={i} service={service}></ServiceCard>

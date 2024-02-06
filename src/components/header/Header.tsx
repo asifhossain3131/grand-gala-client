@@ -6,6 +6,7 @@ const Header = () => {
         {path:'/',pathName:'Home'},
         {path:'/about',pathName:'About'},
         {path:'/contact',pathName:'Contact us'},
+        {path:'/dashboard',pathName:'Dashboard'},
     ]
     return (
         <header >
