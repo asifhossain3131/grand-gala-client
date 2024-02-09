@@ -28,11 +28,11 @@ const Footer = () => {
             <div className="flex justify-between my-[48px]">
                 <h1>Grand<span>Gala</span></h1>
                 {
-                    footerContents.map(content=>
+                    footerContents?.map(content=>
                         <ul className="">
                             <h1 className="font-semibold mb-3">{content.title}</h1>
                             {
-                                content.children.map(child=>
+                                content.children?.map(child=>
                                     <li className="mb-2">{child}</li>
                                     )
                             }
@@ -46,7 +46,7 @@ const Footer = () => {
                 <p>@2023. All rights are reserved</p>
                 <div>
                     {
-                        ['Teams','Privacy','Contact'].map(item=>
+                        ['Teams','Privacy','Contact']?.map(item=>
                             <span className="mx-2">{item}</span>
                             )
                     }

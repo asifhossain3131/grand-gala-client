@@ -7,7 +7,7 @@ const Sponsors = () => {
             <SectionTitle mainTitle="Our valuable clients" subTitle=""></SectionTitle>
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 justify-center items-center">
                 {
-                    sponsors.map((sponsor,i)=>
+                    sponsors?.map((sponsor,i)=>
                         <img className="w-[50px]" key={i} src={sponsor} alt="" />
                         )
                 }

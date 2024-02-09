@@ -18,24 +18,26 @@ import ServiceModal from './ServiceModal';
 type ServiceType={
   _id:string,
   service_title:string,
-  description:string
+  service_description:string
 }
 const AdminServiceControlTable = () => {
   const {services,serviceRefetch}=useServices()
+  const[singleServiceId,setSingleServiceId]=React.useState('')
   const [singleServiceData,setSingleServiceData]=React.useState({})
   const [modalOpen,setModalOpen]=React.useState(false)
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>,serviceId:string) => {
+    setSingleServiceId(serviceId)
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null)
   };
 
-  const handleDeleteService=async(id:string)=>{
+  const handleDeleteService=async()=>{
  try {
-  const res=await axios.delete(`http://localhost:5000/allServices`,{data:{serviceId:id}})
+  const res=await axios.delete(`http://localhost:5000/allServices`,{data:{serviceId:singleServiceId}})
   if(res.data.success===true){
     serviceRefetch()
     setAnchorEl(null)
@@ -45,12 +47,13 @@ const AdminServiceControlTable = () => {
  }
   }
 
-  const handleServiceUpdateModal=async(serviceId:string)=>{
+  const handleServiceUpdateModal=async()=>{
     try {
-      const res=await axios.get(`http://localhost:5000/allServices/${serviceId}`)
+      const res=await axios.get(`http://localhost:5000/allServices/${singleServiceId}`)
       if(res.data.success===true){
            setSingleServiceData(res.data.data)
            setModalOpen(!modalOpen)
+           setAnchorEl(null)
       }
     } catch (error) {
       console.log(error)
@@ -70,7 +73,7 @@ const AdminServiceControlTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {services?.map(({_id,service_title,description}:ServiceType,i:number) => (
+            {services?.map(({_id,service_title,service_description}:ServiceType,i:number) => (
               <TableRow
                 key={_id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -79,10 +82,9 @@ const AdminServiceControlTable = () => {
                  {i+1}
                 </TableCell>
                 <TableCell align="left">{service_title}</TableCell>
-                <TableCell align="left">{description||'Not available'}</TableCell>
+                <TableCell align="left">{service_description||'Not available'}</TableCell>
                 <TableCell align="right"><button><DisplaySettingsIcon></DisplaySettingsIcon></button></TableCell>
-                <TableCell align="right"><button onClick={handleClick}><PendingActionsIcon></PendingActionsIcon></button>
-               
+                <TableCell align="right"><button onClick={(e)=>handleClick(e,_id)}><PendingActionsIcon></PendingActionsIcon></button>
                 <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -92,8 +94,8 @@ const AdminServiceControlTable = () => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem ><button onClick={()=>handleServiceUpdateModal(_id)}>Update</button></MenuItem>
-        <MenuItem><button onClick={()=>handleDeleteService(_id)}>Delete</button></MenuItem>
+        <MenuItem ><button onClick={handleServiceUpdateModal}>Update</button></MenuItem>
+        <MenuItem><button onClick={handleDeleteService}>Delete</button></MenuItem>
       </Menu>
                 </TableCell>
               </TableRow>

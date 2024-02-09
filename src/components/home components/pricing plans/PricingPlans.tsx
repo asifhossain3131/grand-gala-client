@@ -42,7 +42,7 @@ const PricingPlans = () => {
             <SectionTitle mainTitle="Explore our pricing plans" subTitle="Looking for the best pricing around the city? Check out our service pricing which is the best plan around the city"></SectionTitle>
             <div className="grid grid-cols-3 gap-4 mx-auto w-10/12">
                 {
-allPlans.map((plan,i)=>
+allPlans?.map((plan,i)=>
 <PricingCard key={i} plan={plan}></PricingCard>
 )
                 }

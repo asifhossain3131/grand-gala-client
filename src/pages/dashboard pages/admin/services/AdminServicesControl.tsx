@@ -8,9 +8,9 @@ const AdminServicesControl = () => {
     const [addModalOpen,setAddModalOpen]=useState(false)
     return (
         <div className="max-w-[1000px] mx-auto mt-12">
-            <button onClick={()=>setAddModalOpen(!addModalOpen)}> <Fab style={{marginBottom:'10px'}} color="success" aria-label="add">
+            <Fab  onClick={()=>setAddModalOpen(!addModalOpen)} style={{marginBottom:'10px'}} color="success" aria-label="add">
         <AddIcon />
-      </Fab></button>
+      </Fab>
            <AdminServiceControlTable ></AdminServiceControlTable>
            <ServiceModal action={'add'} isOpen={addModalOpen} setAddModalOpen={setAddModalOpen}></ServiceModal>
         </div>

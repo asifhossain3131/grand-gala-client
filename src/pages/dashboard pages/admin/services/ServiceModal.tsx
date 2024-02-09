@@ -7,9 +7,9 @@ import axios from 'axios';
 import useServices from '../../../../hooks/useServices';
 
 type Inputs = {
- service_title:string,
- service_img:string,
- service_description:string,
+  serviceTitle:string,
+  serviceImg:string,
+  serviceDescription:string,
 }
 
 const ServiceModal = ({action, isOpen,setAddModalOpen,singleServiceData }:any) => {
@@ -20,13 +20,18 @@ const ServiceModal = ({action, isOpen,setAddModalOpen,singleServiceData }:any) =
     handleSubmit,
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async(data) =>{
-    const serverData={...data,service_in_array}
+    const serverData={...data,providedServices:service_in_array.length>0?service_in_array:singleServiceData?.services_in_array}
     try {
-      const res=await axios.post('http://localhost:5000/allServices',serverData)
-      if(res.data.success===true){
-        serviceRefetch()
-       setAddModalOpen(!isOpen)
-      }
+      let res;
+    if (action === 'add') {
+      res = await axios.post('http://localhost:5000/allServices', serverData);
+    } else if (action === 'update') {
+      res = await axios.put(`http://localhost:5000/allServices`, {...serverData,serviceId:singleServiceData?._id});
+    }
+    if (res?.data.success === true) {
+      serviceRefetch();
+      setAddModalOpen(!isOpen);
+    }
     } catch (error) {
       console.log(error)
     }
@@ -67,16 +72,25 @@ const ServiceModal = ({action, isOpen,setAddModalOpen,singleServiceData }:any) =
             <h2 className='text-semibold text-lg uppercase'>{action} service</h2>
             <form className='space-y-4' onSubmit={handleSubmit(onSubmit)}>
               <div className='flex flex-col lg:flex-row gap-4 '>
-              <TextField defaultValue={singleServiceData?.service_title||''} {...register("service_title", { required: true })}  id="standard-basic" label="Service Name" variant="standard" />
-              <TextField defaultValue={singleServiceData?.service_img||''} {...register("service_img", { required: true })} id="standard-basic" label="Service image link" variant="standard" />
+              <TextField defaultValue={singleServiceData?.service_title||''} {...register("serviceTitle", { required: true })}  id="standard-basic" label="Service Name" variant="standard" />
+              <TextField defaultValue={singleServiceData?.service_img||''} {...register("serviceImg", { required: true })} id="standard-basic" label="Service image link" variant="standard" />
               </div>
               <div>
-                <h1 className='text-gray-600'>Service features : <span><button><AddCircleOutlineIcon className='text-green-600'></AddCircleOutlineIcon></button></span></h1>
+                <h1 className='text-gray-600'>Service features :</h1>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                <TextField   id="standard-basic"   label="Service feature-1" variant="standard" />
-                <TextField  id="standard-basic"  label="Service feature-2" variant="standard" />
-                <TextField id="standard-basic"  label="Service feature-3" variant="standard" />
-                <TextField id="standard-basic"  label="Service feature-4" variant="standard" />
+                  {action==='update' && singleServiceData?.services_in_array?.map((service:string,i:number)=>
+                    <TextField key={i} size='small' defaultValue={service} id="standard-basic"   label={`Service feature-${i+1}`} variant="standard" />
+                    )}
+                  {action==='add' && 
+                  <>
+                       <TextField size='small'  id="standard-basic"   label="Service feature-1" variant="standard" />
+                <TextField size='small'  id="standard-basic"  label="Service feature-2" variant="standard" />
+                <TextField size='small' id="standard-basic"  label="Service feature-3" variant="standard" />
+                <TextField size='small' id="standard-basic"  label="Service feature-4" variant="standard" />
+                <TextField size='small' id="standard-basic"  label="Service feature-4" variant="standard" />
+                <TextField size='small' id="standard-basic"  label="Service feature-5" variant="standard" />
+                  </>
+                  }
                 </div>
               </div>
               <TextField
@@ -86,7 +100,7 @@ const ServiceModal = ({action, isOpen,setAddModalOpen,singleServiceData }:any) =
           rows={4}
           fullWidth
           variant="standard"
-          defaultValue={singleServiceData?.service_description||''} {...register("service_description", { required: true })}
+          defaultValue={singleServiceData?.service_description||''} {...register("serviceDescription", { required: true })}
         />
               <button className='bg-green-500 p-2 rounded text-white uppercase' type="submit">{action}</button>
             </form>

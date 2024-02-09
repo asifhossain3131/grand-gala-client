@@ -11,7 +11,7 @@ const ServiceCard = ({service}:{service:serviceType}) => {
             <h2 className="mt-5 mb-5 text-[20px] font-[600]">{service_title}</h2>
             <ul>
                 {
-                    services_in_array.map((item,i)=>
+                    services_in_array?.map((item,i)=>
                     <li key={i} className="flex gap-3 items-center">
                         <img className="w-4" src="https://cdn-icons-png.flaticon.com/128/12503/12503776.png" alt="" />
                         <span className="text-sm">{item}</span>
