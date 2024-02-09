@@ -1,16 +1,18 @@
 import { Fab } from "@mui/material";
-import useServices from "../../../../hooks/useServices";
 import AdminServiceControlTable from "./AdminServiceControlTable";
 import AddIcon from '@mui/icons-material/Add';
+import { useState } from "react";
+import ServiceModal from "./ServiceModal";
 
 const AdminServicesControl = () => {
-    const {services,refetch}=useServices()
+    const [addModalOpen,setAddModalOpen]=useState(false)
     return (
         <div className="max-w-[1000px] mx-auto mt-12">
-             <Fab style={{marginBottom:'10px'}} color="primary" aria-label="add">
+            <button onClick={()=>setAddModalOpen(!addModalOpen)}> <Fab style={{marginBottom:'10px'}} color="success" aria-label="add">
         <AddIcon />
-      </Fab>
-           <AdminServiceControlTable services={services} refetch={refetch}></AdminServiceControlTable>
+      </Fab></button>
+           <AdminServiceControlTable ></AdminServiceControlTable>
+           <ServiceModal action={'add'} isOpen={addModalOpen} setAddModalOpen={setAddModalOpen}></ServiceModal>
         </div>
     );
 };
