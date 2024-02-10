@@ -26,6 +26,7 @@ const AdminServiceControlTable = () => {
   const [singleServiceData,setSingleServiceData]=React.useState({})
   const [modalOpen,setModalOpen]=React.useState(false)
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>,serviceId:string) => {
     setSingleServiceId(serviceId)
@@ -34,6 +35,12 @@ const AdminServiceControlTable = () => {
   const handleClose = () => {
     setAnchorEl(null)
   };
+
+  const closeModal=()=>{
+    setSingleServiceData({})
+    setSingleServiceId('')
+    setModalOpen(!modalOpen)
+  }
 
   const handleDeleteService=async()=>{
  try {
@@ -102,7 +109,7 @@ const AdminServiceControlTable = () => {
             ))}
           </TableBody>
         </Table>
-        <ServiceModal singleServiceData={singleServiceData} action={'update'} isOpen={modalOpen} setAddModalOpen={setModalOpen}></ServiceModal>
+        <ServiceModal singleServiceData={singleServiceData} action={'update'} isOpen={modalOpen} closeModal={closeModal}></ServiceModal>
       </TableContainer>
     );
 };

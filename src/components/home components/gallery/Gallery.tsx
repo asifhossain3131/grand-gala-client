@@ -3,7 +3,7 @@ import GalleryPhotos from "./GalleryPhotos";
 
 const Gallery = () => {
     return (
-        <div className="mx-[81px] flex items-center  justify-center gap-x-[120px]">
+        <div className="mx-[81px] flex flex-col-reverse lg:flex-row items-center  justify-center gap-x-[120px]">
             <GalleryPhotos></GalleryPhotos>
             <div className="w-1/2">
                 <SectionTitle mainTitle="Gallery" subTitle="Best moments with grand gala that will also amaze you how this giving so much facilities with an affordable price which you cannot even imagine. Yes, this is just we. Have a look at our photo gallery for detailed understandings"></SectionTitle>

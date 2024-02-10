@@ -3,7 +3,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 
 export default function GalleryPhotos() {
   return (
-    <ImageList  sx={{ width: 630, height: 650 }} variant="woven" cols={4} gap={8}>
+    <ImageList  sx={{ maxWidthidth: 630, maxHeight: 650 }} variant="woven" cols={4} gap={8}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TextField } from '@mui/material';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useForm, SubmitHandler } from "react-hook-form"
 import axios from 'axios';
 import useServices from '../../../../hooks/useServices';
@@ -12,12 +11,13 @@ type Inputs = {
   serviceDescription:string,
 }
 
-const ServiceModal = ({action, isOpen,setAddModalOpen,singleServiceData }:any) => {
+const ServiceModal = ({action, isOpen,closeModal,singleServiceData }:any) => {
   const{serviceRefetch}=useServices()
-  const[service_in_array,setServicesInArray]=useState<string[]>([])
+  const[service_in_array,setServicesInArray]=React.useState<string[]>([])
   const {
     register,
     handleSubmit,
+    reset
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async(data) =>{
     const serverData={...data,providedServices:service_in_array.length>0?service_in_array:singleServiceData?.services_in_array}
@@ -30,11 +30,17 @@ const ServiceModal = ({action, isOpen,setAddModalOpen,singleServiceData }:any) =
     }
     if (res?.data.success === true) {
       serviceRefetch();
-      setAddModalOpen(!isOpen);
+      closeModal
+      reset()
     }
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const handleCloseModalButton=()=>{
+    closeModal()
+    reset()
   }
   return (
     <AnimatePresence>
@@ -66,9 +72,11 @@ const ServiceModal = ({action, isOpen,setAddModalOpen,singleServiceData }:any) =
               backgroundColor: '#fff',
               padding: '20px',
               borderRadius: '8px',
-              boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.2)'
+              boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.2)',
+              position:'relative'
             }}
           >
+                <button onClick={handleCloseModalButton} className='absolute top-2 right-2 text-red-600 font-semibold'>Close</button>
             <h2 className='text-semibold text-lg uppercase'>{action} service</h2>
             <form className='space-y-4' onSubmit={handleSubmit(onSubmit)}>
               <div className='flex flex-col lg:flex-row gap-4 '>
@@ -81,7 +89,7 @@ const ServiceModal = ({action, isOpen,setAddModalOpen,singleServiceData }:any) =
                   {action==='update' && singleServiceData?.services_in_array?.map((service:string,i:number)=>
                     <TextField key={i} size='small' defaultValue={service} id="standard-basic"   label={`Service feature-${i+1}`} variant="standard" />
                     )}
-                  {action==='add' && 
+                  {(action==='add'||singleServiceData?.service_in_array?.length===0) && 
                   <>
                        <TextField size='small'  id="standard-basic"   label="Service feature-1" variant="standard" />
                 <TextField size='small'  id="standard-basic"  label="Service feature-2" variant="standard" />

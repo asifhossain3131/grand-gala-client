@@ -9,7 +9,7 @@ type pricingTypes={
 const PricingCard = ({plan}:{plan:pricingTypes}) => {
     const{price,short_description,pricing_pack,facilities_in_array}=plan||{}
     return (
-        <div className="w-[330] h-[550px] rounded space-y-5 px-[25px] py-[36px] bg-gray-300">
+        <div className="max-w-[330] max-h-[550px] rounded space-y-5 px-[25px] py-[36px] bg-gray-300">
        <div>
        <h2 className=" text-[20px] font-[600]">{pricing_pack}</h2>
         <p className="mt-2 text-sm">{short_description}</p>
