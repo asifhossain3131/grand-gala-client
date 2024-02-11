@@ -4,6 +4,7 @@ import CustomerReviews from '../../components/home components/customer reviews/C
 import EventItems from '../../components/home components/event items/EventItems';
 import Gallery from '../../components/home components/gallery/Gallery';
 import PricingPlans from '../../components/home components/pricing plans/PricingPlans';
+import RecentEvents from '../../components/home components/recent events/RecentEvents';
 import Services from '../../components/home components/services/Services';
 import Sponsors from '../../components/home components/sponsors/Sponsors';
 
@@ -15,6 +16,7 @@ const Home = () => {
             <EventItems></EventItems>
             <PricingPlans></PricingPlans>
             <Gallery></Gallery>
+            <RecentEvents></RecentEvents>
             <CustomerReviews></CustomerReviews>
             <Sponsors></Sponsors>
             <Footer></Footer>

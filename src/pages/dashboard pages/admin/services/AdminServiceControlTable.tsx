@@ -44,7 +44,7 @@ const AdminServiceControlTable = () => {
 
   const handleDeleteService=async()=>{
  try {
-  const res=await axios.delete(`http://localhost:5000/allServices`,{data:{serviceId:singleServiceId}})
+  const res=await axios.delete(`https://grand-gala-server.vercel.app/allServices`,{data:{serviceId:singleServiceId}})
   if(res.data.success===true){
     serviceRefetch()
     setAnchorEl(null)
@@ -56,7 +56,7 @@ const AdminServiceControlTable = () => {
 
   const handleServiceUpdateModal=async()=>{
     try {
-      const res=await axios.get(`http://localhost:5000/allServices/${singleServiceId}`)
+      const res=await axios.get(`https://grand-gala-server.vercel.app/allServices/${singleServiceId}`)
       if(res.data.success===true){
            setSingleServiceData(res.data.data)
            setModalOpen(!modalOpen)

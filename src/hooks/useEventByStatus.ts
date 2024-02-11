@@ -3,10 +3,10 @@ import axios from "axios";
 
 const useEventByStatus = (status:string) => {
     const{data:relatedEvents,refetch}=useQuery({
-        queryKey:['eventBySttatus'],
+        queryKey:['eventByStatus'],
         queryFn:async()=>{
             try {
-                const res=await axios.get(`http://localhost:5000/allEvents/${status}`)
+                const res=await axios.get(`https://grand-gala-server.vercel.app/allEvents/${status}`)
                 if(res?.data?.success===true){
                     return res?.data?.data
                 }

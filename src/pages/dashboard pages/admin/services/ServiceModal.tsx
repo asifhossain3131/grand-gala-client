@@ -24,13 +24,19 @@ const ServiceModal = ({action, isOpen,closeModal,singleServiceData }:any) => {
     try {
       let res;
     if (action === 'add') {
-      res = await axios.post('http://localhost:5000/allServices', serverData);
+      const newServiceData={
+        service_title:data.serviceTitle,
+        service_img:data.serviceImg,
+        service_description:data.serviceDescription,
+        servies_in_array:service_in_array
+      }
+      res = await axios.post('https://grand-gala-server.vercel.app/allServices', newServiceData);
     } else if (action === 'update') {
-      res = await axios.put(`http://localhost:5000/allServices`, {...serverData,serviceId:singleServiceData?._id});
+      res = await axios.put(`https://grand-gala-server.vercel.app/allServices`, {...serverData,serviceId:singleServiceData?._id});
     }
     if (res?.data.success === true) {
       serviceRefetch();
-      closeModal
+      closeModal()
       reset()
     }
     } catch (error) {

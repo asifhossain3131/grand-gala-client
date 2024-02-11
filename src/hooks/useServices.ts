@@ -6,7 +6,7 @@ const useServices = () => {
     queryKey:['allServices'],
     queryFn:async()=>{
         try {
-            const res=await axios.get('http://localhost:5000/allServices')
+            const res=await axios.get('https://grand-gala-server.vercel.app/allServices')
             if(res.data.success===true){
               return res.data.data
             }
