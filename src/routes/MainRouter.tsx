@@ -21,8 +21,7 @@ const router = createBrowserRouter([
       element:<DashboardLayout></DashboardLayout>,
       children:[
         {
-          index:true,
-          // path:'/dashboard/eventItems',
+          path:'/dashboard',
           element:<EventItemsManagement></EventItemsManagement>
         },
         {

@@ -98,7 +98,7 @@ const ServiceModal = ({action, isOpen,closeModal,singleServiceData }:any) => {
                   {(action==='add'||singleServiceData?.service_in_array?.length===0) && 
                   <>
                        <TextField size='small'  id="standard-basic"   label="Service feature-1" variant="standard" />
-                <TextField size='small'  id="standard-basic"  label="Service feature-2" variant="standard" />
+                <TextField onChange={(e)=>setServicesInArray([e.target.value])} size='small'  id="standard-basic"  label="Service feature-2" variant="standard" />
                 <TextField size='small' id="standard-basic"  label="Service feature-3" variant="standard" />
                 <TextField size='small' id="standard-basic"  label="Service feature-4" variant="standard" />
                 <TextField size='small' id="standard-basic"  label="Service feature-4" variant="standard" />

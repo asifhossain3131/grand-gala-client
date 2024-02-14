@@ -1,5 +1,7 @@
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
+import Blogs from '../../components/home components/blogs/Blogs';
+import ContactUs from '../../components/home components/contact us/ContactUs';
 import CustomerReviews from '../../components/home components/customer reviews/CustomerReviews';
 import EventItems from '../../components/home components/event items/EventItems';
 import Gallery from '../../components/home components/gallery/Gallery';
@@ -18,7 +20,9 @@ const Home = () => {
             <Gallery></Gallery>
             <RecentEvents></RecentEvents>
             <CustomerReviews></CustomerReviews>
+            <Blogs></Blogs>
             <Sponsors></Sponsors>
+            <ContactUs></ContactUs>
             <Footer></Footer>
         </div>
     );

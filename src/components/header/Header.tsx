@@ -18,7 +18,8 @@ const Header = () => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            const headerHeight = document.querySelector('.header-bg').offsetHeight;
+            const headerElement = document.querySelector('.header-bg') as HTMLElement | null;
+            const headerHeight = headerElement ? headerElement.offsetHeight : 0;
             setIsScrolled(scrollPosition > headerHeight);
         };
 
@@ -33,7 +34,7 @@ const Header = () => {
         setIsAnimated(true);
     }, []);
     return (
-        <header >
+        <header>
           <nav className={`fixed z-20 w-full p-4 flex items-center justify-between ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
                 <h2 className='font-semibold text-2xl text-yellow-500'>Grand<span className='text-yellow-600 font-bold text-4xl'>Gala</span></h2>
                 <ul className='flex items-center justify-around space-x-4 text-yellow-600 font-bold'>

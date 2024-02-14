@@ -2,7 +2,7 @@
 const EventItemsManagement = () => {
     return (
         <div>
-            
+            fdf
         </div>
     );
 };

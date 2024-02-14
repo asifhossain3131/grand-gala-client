@@ -13,7 +13,7 @@ const ServiceCard = ({service}:{service:serviceType}) => {
 
     return (
         <div 
-            className="lg:max-w-[412] max-h-[590px] rounded px-[25px] py-[36px] bg-gray-300" 
+            className="lg:max-w-[412] max-h-[590px] rounded px-[25px] py-[36px] bg-gray-100" 
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

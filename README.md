@@ -43,7 +43,7 @@ In this website, an user can book an event and pays advance fees for the event m
 
 #### Live Demo
 
- live demo [GrandGala](https://your-live-demo-link.com).
+ live site deployed on Firebase [GrandGala](https://grandgala.web.app/).
 
 #### Server Code
 

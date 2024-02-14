@@ -31,7 +31,7 @@ const PricingPlans = () => {
           "price": 399.99,
           "facilities_in_array": [
             "Full-service event planning",
-            "Luxury venue selection and customization",
+            "Luxury venue selection",
             "Customized decoration and design",
             "Gourmet catering (up to 200 guests)"
           ]
